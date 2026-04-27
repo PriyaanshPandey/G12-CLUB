@@ -538,7 +538,7 @@ input.wrong  { border-color: var(--kyuubi-red)   !important; box-shadow: 0 0 16p
     <div class="level-badge badge-blue">Level 03 · The Real Test</div>
 
     <div class="img-placeholder" id="l3-img-wrap">
-      <div class="img-icon">🏛️</div><div>photo1.jpg</div>
+      <div class="img-icon">🏛️</div><div>image 1.jpeg</div>
     </div>
 
     <div class="quote-text">"With great power comes<br>great responsibility."</div>
@@ -600,7 +600,7 @@ input.wrong  { border-color: var(--kyuubi-red)   !important; box-shadow: 0 0 16p
     <div class="level-badge badge-red">Level 04 · The Mission</div>
 
     <div class="img-placeholder" id="l4-img-wrap">
-      <div class="img-icon">📸</div><div>photo2.jpg</div>
+      <div class="img-icon">📸</div><div>image 2.jpeg</div>
     </div>
 
     <div class="quote-text">"You're in the endgame now.<br>One last step remains."</div>
@@ -675,8 +675,8 @@ input.wrong  { border-color: var(--kyuubi-red)   !important; box-shadow: 0 0 16p
     </div>
 
     <div class="question-block">
-      <div class="question-label"><span class="q-num">BP</span> Phone number of Bhayan Pandey</div>
-      <input type="text" id="l5-bp" placeholder="Decoded number…" inputmode="numeric">
+      <div class="question-label"><span class="q-num">PP</span> Phone number of Priyaansh Pandey</div>
+      <input type="text" id="l5-pp" placeholder="Decoded number…" inputmode="numeric">
     </div>
     <div class="question-block">
       <div class="question-label"><span class="q-num">SG</span> Phone number of Saurabh Gupta</div>
@@ -701,11 +701,11 @@ input.wrong  { border-color: var(--kyuubi-red)   !important; box-shadow: 0 0 16p
       <strong style="color:var(--naruto-yellow);">Contact us fast</strong> before someone else grabs your share!
     </p>
     <div class="contact-row">
-      <div class="contact-chip">📱 Bhayan Pandey</div>
+      <div class="contact-chip">📱 Priyaansh Pandey</div>
       <div class="contact-chip">📱 Saurabh Gupta</div>
     </div>
     <div class="btn-row">
-      <a href="guidelines.pdf" download class="btn btn-gold">📄 &nbsp;Download Guidelines</a>
+      <a href="GUIDELINES.pdf" download class="btn btn-gold">📄 &nbsp;Download Guidelines</a>
       <button class="btn btn-primary" style="width:auto;padding:14px 24px;" onclick="restartApp()">🔄 &nbsp;Restart</button>
     </div>
     <div class="divider"></div>
@@ -723,8 +723,8 @@ input.wrong  { border-color: var(--kyuubi-red)   !important; box-shadow: 0 0 16p
 //  🔧 CONFIG – change to real decoded phone numbers
 // ────────────────────────────────────────────────
 const CONFIG = {
-  bhayan_pandey_number: "9876543210",   // ← paste the real number here
-  saurabh_gupta_number: "9123456780",   // ← paste the real number here
+  priyaansh_pandey_number: "9454966563",   // Corrected number
+  saurabh_gupta_number: "8853201659",   // Corrected number
 };
 
 // ────────────────────────────────────────────────
@@ -963,14 +963,14 @@ function level4Submit(){
 // ────────────────────────────────────────────────
 function level5Submit(){
   playClick();
-  const bp = document.getElementById('l5-bp').value.trim().replace(/\s+/g,'');
+  const pp = document.getElementById('l5-pp').value.trim().replace(/\s+/g,'');
   const sg = document.getElementById('l5-sg').value.trim().replace(/\s+/g,'');
 
-  const bpOk = chk(document.getElementById('l5-bp'), bp===CONFIG.bhayan_pandey_number);
+  const ppOk = chk(document.getElementById('l5-pp'), pp===CONFIG.priyaansh_pandey_number);
   const sgOk = chk(document.getElementById('l5-sg'), sg===CONFIG.saurabh_gupta_number);
 
-  showError('l5-error', !(bpOk&&sgOk));
-  if(bpOk&&sgOk){
+  showError('l5-error', !(ppOk&&sgOk));
+  if(ppOk&&sgOk){
     setProgress(100);
     setTimeout(()=>showTick(()=>{ goToLevel('success'); playSuccess(); launchConfetti(); }), 300);
   }
@@ -1021,8 +1021,8 @@ function tryPhoto(id,src,alt){
   i.onload=()=>{ w.innerHTML=''; w.className=''; i.className='level-img'; i.alt=alt; w.appendChild(i); };
   i.src=src;
 }
-tryPhoto('l3-img-wrap','photo1.jpg','Campus Photo 1');
-tryPhoto('l4-img-wrap','photo2.jpg','Campus Photo 2');
+tryPhoto('l3-img-wrap','image 1.jpeg','Campus Photo 1');
+tryPhoto('l4-img-wrap','image 2.jpeg','Campus Photo 2');
 </script>
 </body>
 </html>
